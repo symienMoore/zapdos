@@ -1,23 +1,39 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {auth} from '../firebase.client'
+import { getDownloadURL, getStorage, ref, uploadString } from 'firebase/storage';
 
 const Signup = () => {
 const authfb = auth
+const [profilePic, setProfilePic] = useState<any>("")
+const [user, setUser] = useState<any>()
 const { register, handleSubmit, watch, formState: { errors } } = useForm();
+const storage = getStorage();
+const fileRef = useRef(null)
 
-const getProfileImage = () => {
-
-}
 
 const signup = (data: any) => {
     createUserWithEmailAndPassword(authfb, data.email, data.password)
     .then((userCredential) => {
     // Signed in 
+    console.log(data.image[0])
+    const rd = new FileReader()
+    rd.readAsDataURL(data.image[0])
+    rd.onload = (readerEvent) => {
+        console.log(readerEvent)
+        setProfilePic(readerEvent.target.result)
+    }
+    console.log(profilePic)
     const user = userCredential.user;
+    setUser(user)
+    console.log(user)
+    const imageRef = ref(storage, `profile_images/${user.uid}/p`)
+    uploadString(imageRef, profilePic, 'data_url').then(async () => {
+    const downloadurl = await getDownloadURL(imageRef)
     updateProfile(user, {
         displayName: data.username,
+        photoURL: downloadurl
     }).then(() => {
         console.log(user)
     })
@@ -27,7 +43,8 @@ const signup = (data: any) => {
     const errorMessage = error.message;
     // ..
   });
-}
+})}
+
   return (
     <div>
         <form className='flex flex-col w-96 mx-auto mt-40 p-8 shadow-md border rounded-md' onSubmit={handleSubmit(signup)}>
