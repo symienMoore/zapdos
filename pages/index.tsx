@@ -1,11 +1,38 @@
+import { useEffect, useState } from 'react'
+import Alert from '../components/alert'
 import {auth} from '../firebase.client'
+import Image from 'next/image'
 
-export default function Home({}) {
-  const a = auth
-  console.log(a.currentUser)
+const UserPage = () => {
   return (
     <div>
-      <h1 className="text-yellow-500">Zapdos</h1>
+      <h1>{auth.currentUser.displayName}</h1>
     </div>
-  );
+  )
+}
+
+const LoginPage = () => {
+  return (
+    <div>
+      Welcome!
+    </div>
+  )
+}
+
+export default function Home({}) {
+  const [user, setUser] = useState<any>()
+  useEffect(() => {
+    if(auth.currentUser) {
+      setUser(auth.currentUser)
+    }
+  }, [])
+  
+  return (
+    <div>
+      {user ?
+        <UserPage /> : 
+        <LoginPage />
+      }
+    </div>
+  )
 }

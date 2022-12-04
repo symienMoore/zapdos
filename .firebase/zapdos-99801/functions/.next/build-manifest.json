@@ -1,0 +1,57 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/YDwowdErFAa72ILCherGZ/_buildManifest.js",
+    "static/YDwowdErFAa72ILCherGZ/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-3b5a00d5d7e8d93b.js",
+      "static/chunks/main-f2e125da23ccdc4a.js",
+      "static/chunks/7112840a-c73199095e62c361.js",
+      "static/chunks/63ad2cbc-55cce3d2b8559e7e.js",
+      "static/chunks/453-224e1da3154486cf.js",
+      "static/chunks/pages/index-e0337473b08199df.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-3b5a00d5d7e8d93b.js",
+      "static/chunks/main-f2e125da23ccdc4a.js",
+      "static/css/154197f98259771a.css",
+      "static/chunks/pages/_app-ad298603a59a9c38.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-3b5a00d5d7e8d93b.js",
+      "static/chunks/main-f2e125da23ccdc4a.js",
+      "static/chunks/pages/_error-8353112a01355ec2.js"
+    ],
+    "/login": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-3b5a00d5d7e8d93b.js",
+      "static/chunks/main-f2e125da23ccdc4a.js",
+      "static/chunks/7112840a-c73199095e62c361.js",
+      "static/chunks/63ad2cbc-55cce3d2b8559e7e.js",
+      "static/chunks/453-224e1da3154486cf.js",
+      "static/chunks/536-f0d59ba501aec824.js",
+      "static/chunks/pages/login-0a7e04587dd96882.js"
+    ],
+    "/signup": [
+      "static/chunks/webpack-ee7e63bc15b31913.js",
+      "static/chunks/framework-3b5a00d5d7e8d93b.js",
+      "static/chunks/main-f2e125da23ccdc4a.js",
+      "static/chunks/7112840a-c73199095e62c361.js",
+      "static/chunks/63ad2cbc-55cce3d2b8559e7e.js",
+      "static/chunks/453-224e1da3154486cf.js",
+      "static/chunks/536-f0d59ba501aec824.js",
+      "static/chunks/pages/signup-9ed7518cdcbeceaa.js"
+    ]
+  },
+  "ampFirstPages": []
+}
